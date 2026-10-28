@@ -22,14 +22,14 @@ function Navbar() {
   return (
     <header className="w-full bg-white">
       {/* Brand: thinner typography and reduced spacing. */}
-      <div className="relative flex w-full flex-col items-center px-4 pt-5 sm:pt-6">
+      <div className="relative flex w-full flex-col items-center px-4 pt-8 sm:pt-10">
         <Link
           to="/"
           onClick={closeMenu}
           className="flex flex-col items-center text-center no-underline"
           aria-label="Dazzle Beauty Studio home"
         >
-            <span className="font-['Cormorant_Garamond'] text-[17px] font-light uppercase tracking-[0.12em] text-neutral-950 sm:text-lg sm:tracking-[0.16em] md:text-xl">
+            <span className="font-['Cormorant_Garamond'] text-[19px] font-extralight uppercase tracking-[0.09em] text-neutral-950 sm:text-[24px] sm:tracking-[0.20em] md:text-[28px]">
              DAZZLE BEAUTY STUDIO
             </span>
           <span className="mt-0.5 text-[8px] font-normal uppercase tracking-[0.35em] text-neutral-600 sm:text-[9px] sm:tracking-[0.4em]">
@@ -65,7 +65,7 @@ function Navbar() {
         {/* Desktop navigation: positioned closer to the brand. */}
         <nav
           aria-label="Main navigation"
-          className="mt-5 hidden w-full max-w-[1050px] items-center justify-between px-6 pb-5 md:flex lg:px-10"
+          className="mt-7 hidden w-full max-w-[1050px] items-center justify-between px-6 pb-5 md:flex lg:px-10"
         >
           {links.map((link) => (
             <Link
