@@ -1,5 +1,5 @@
 // Base URL for the Dazzle Beauty Studio Express backend.
-const API_BASE_URL = 'http://localhost:5001/api';
+const API_BASE_URL = 'https://dazzle-beauty-booking.onrender.com/api';
 
 // Shared helper for sending requests to the backend API.
 async function apiRequest(endpoint, options = {}) {
