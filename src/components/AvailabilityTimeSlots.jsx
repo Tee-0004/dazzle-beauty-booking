@@ -150,7 +150,27 @@ function AvailabilityTimeSlots({
         <>
           {/* Render the slots returned by the backend API. */}
           <div className="grid grid-cols-2 gap-3">
-            {timeSlots.map((slot) => {
+            {timeSlots
+  .filter((slot) => {
+    const now = new Date();
+
+    const todayString = [
+      now.getFullYear(),
+      String(now.getMonth() + 1).padStart(2, '0'),
+      String(now.getDate()).padStart(2, '0'),
+    ].join('-');
+
+    const isToday = selectedDate === todayString;
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+    const [hours, minutes] = slot.time.split(':').map(Number);
+    const slotStartMinutes = hours * 60 + minutes;
+
+    const isPastTime = isToday && slotStartMinutes <= currentMinutes;
+
+    return slot.available && !isPastTime;
+  })
+  .map((slot) => {
               const isSelected = selectedTime === slot.time;
               const now = new Date();
 
